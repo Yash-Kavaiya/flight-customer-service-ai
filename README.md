@@ -88,81 +88,8 @@ mindmap
 | 🌙 After-hours Support | Limited coverage | 24/7 availability |
 | 📈 Scalability Issues | Linear cost growth | Exponential efficiency |
 
----
+![image](https://github.com/user-attachments/assets/106adb16-e9d9-4900-be0c-2f4e7b92ebc7)
 
-## 🏗️ Technical Architecture
-
-### 🏛️ System Architecture Diagram
-
-```mermaid
-graph TB
-    subgraph "Client Layer"
-        UI[🖥️ Web Interface]
-        MOBILE[📱 Mobile App]
-        API_CLIENT[🔌 API Clients]
-    end
-    
-    subgraph "Google Cloud Platform"
-        subgraph "ADK Runtime"
-            ORCHESTRATOR[🎯 Orchestrator Agent]
-            
-            subgraph "Specialized Agents"
-                FLIGHT[✈️ Flight Operations]
-                BOOKING[📋 Booking Management]
-                BAGGAGE[🧳 Baggage Services]
-                POLICY[📜 Policy & Billing]
-                LOYALTY[⭐ Loyalty Program]
-                EMERGENCY[🚨 Emergency Response]
-                LANGUAGE[🌍 Language & Cultural]
-            end
-        end
-        
-        subgraph "Cloud Services"
-            RUN[☁️ Cloud Run]
-            FIRESTORE[🔥 Firestore]
-            BIGQUERY[📊 BigQuery]
-            VERTEX[🤖 Vertex AI]
-            TRANSLATE[🔤 Translation API]
-            SPEECH[🎤 Speech APIs]
-        end
-        
-        subgraph "External APIs"
-            FLIGHT_API[✈️ Flight Data]
-            WEATHER_API[🌤️ Weather Service]
-            AIRPORT_API[🏢 Airport Systems]
-        end
-    end
-    
-    UI --> RUN
-    MOBILE --> RUN
-    API_CLIENT --> RUN
-    
-    RUN --> ORCHESTRATOR
-    ORCHESTRATOR --> FLIGHT
-    ORCHESTRATOR --> BOOKING
-    ORCHESTRATOR --> BAGGAGE
-    ORCHESTRATOR --> POLICY
-    ORCHESTRATOR --> LOYALTY
-    ORCHESTRATOR --> EMERGENCY
-    ORCHESTRATOR --> LANGUAGE
-    
-    FLIGHT --> FLIGHT_API
-    FLIGHT --> WEATHER_API
-    BOOKING --> FIRESTORE
-    BAGGAGE --> AIRPORT_API
-    POLICY --> BIGQUERY
-    LOYALTY --> FIRESTORE
-    EMERGENCY --> VERTEX
-    LANGUAGE --> TRANSLATE
-    
-    ORCHESTRATOR --> SPEECH
-    ORCHESTRATOR --> BIGQUERY
-    
-    style ORCHESTRATOR fill:#4285F4,stroke:#1557b0,color:#fff
-    style RUN fill:#34a853,stroke:#0f5132,color:#fff
-    style FIRESTORE fill:#ff6d01,stroke:#e55100,color:#fff
-    style BIGQUERY fill:#669df6,stroke:#1557b0,color:#fff
-```
 
 ### 🔧 Technology Stack
 
