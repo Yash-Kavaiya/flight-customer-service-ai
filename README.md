@@ -110,92 +110,12 @@ mindmap
 
 ### 💬 Customer Interaction Sequence
 
-```mermaid
-sequenceDiagram
-    participant C as 👤 Customer
-    participant UI as 🖥️ Interface
-    participant O as 🎯 Orchestrator
-    participant FA as ✈️ Flight Agent
-    participant BA as 📋 Booking Agent
-    participant PA as 📜 Policy Agent
-    participant LA as ⭐ Loyalty Agent
-    participant DB as 💾 Database
-    
-    C->>UI: "My flight to Paris is delayed, need connection"
-    UI->>O: Process customer query
-    
-    Note over O: Intent Recognition & Routing
-    O->>FA: Check flight status AA123
-    FA->>DB: Query flight data
-    DB-->>FA: Flight delayed 2 hours
-    FA-->>O: Flight status + connection risk
-    
-    O->>BA: Find alternative connections
-    BA->>DB: Search available flights
-    DB-->>BA: Alternative options found
-    BA-->>O: 3 rebooking options
-    
-    O->>PA: Check rebooking policies
-    PA->>DB: Retrieve fare rules
-    DB-->>PA: Policy details
-    PA-->>O: No fees for delays >2hrs
-    
-    O->>LA: Apply member benefits
-    LA->>DB: Check loyalty status
-    DB-->>LA: Gold member benefits
-    LA-->>O: Priority rebooking + lounge access
-    
-    Note over O: Synthesize response
-    O->>UI: Present coordinated solution
-    UI->>C: "Here are your options with Gold benefits..."
-    
-    C->>UI: "Book option 2 please"
-    UI->>O: Confirm rebooking
-    O->>BA: Process booking change
-    BA->>DB: Update reservation
-    DB-->>BA: Booking confirmed
-    BA-->>O: New booking details
-    O->>UI: Confirmation + boarding pass
-    UI->>C: "Rebooking confirmed! Gate B12"
-```
+![image](https://github.com/user-attachments/assets/b9bb563d-00a1-4689-9768-f4e196b30eee)
+
 
 ### 🚨 Emergency Response Flow
 
-```mermaid
-sequenceDiagram
-    participant WS as 🌩️ Weather Service
-    participant EA as 🚨 Emergency Agent
-    participant O as 🎯 Orchestrator
-    participant FA as ✈️ Flight Ops
-    participant BA as 📋 Booking Agent
-    participant N as 📱 Notification Service
-    participant C as 👤 Customers
-    
-    WS->>EA: Severe weather alert
-    EA->>O: Activate crisis protocol
-    
-    Note over O: Mass Disruption Mode
-    O->>FA: Get affected flights
-    FA-->>O: 47 flights cancelled
-    
-    O->>EA: Initiate emergency response
-    EA->>BA: Prepare mass rebooking
-    BA->>FA: Check availability across partners
-    FA-->>BA: Alternative options identified
-    
-    Note over EA: Priority Processing
-    EA->>N: Send proactive notifications
-    N->>C: "Flight cancelled - rebooking options"
-    
-    EA->>BA: Auto-rebook high priority
-    BA-->>EA: Elite customers rebooked
-    
-    EA->>O: Crisis status update
-    O->>N: Broadcast general update
-    N->>C: "Situation update + compensation"
-```
-
----
+![image](https://github.com/user-attachments/assets/1a940c1d-b22f-45a3-a0a1-38fd5cf38a32)
 
 ## 📊 Business Process Flow
 
@@ -228,100 +148,14 @@ journey
 
 ### 💼 Business Value Chain
 
-```mermaid
-graph LR
-    subgraph "Input Layer"
-        INQ[📞 Customer Inquiries]
-        DATA[📊 Flight Data]
-        RULES[📜 Business Rules]
-    end
-    
-    subgraph "Processing Layer"
-        AI[🤖 AI Processing]
-        ROUTE[🎯 Smart Routing]
-        COORD[🔄 Agent Coordination]
-    end
-    
-    subgraph "Output Layer"
-        SOL[✅ Solutions]
-        ACT[⚡ Actions]
-        INS[📈 Insights]
-    end
-    
-    subgraph "Value Creation"
-        SAT[😊 Customer Satisfaction]
-        EFF[⚡ Operational Efficiency]
-        COST[💰 Cost Reduction]
-        REV[📈 Revenue Growth]
-    end
-    
-    INQ --> AI
-    DATA --> ROUTE
-    RULES --> COORD
-    
-    AI --> SOL
-    ROUTE --> ACT
-    COORD --> INS
-    
-    SOL --> SAT
-    ACT --> EFF
-    INS --> COST
-    SAT --> REV
-    
-    style SAT fill:#4CAF50,stroke:#2E7D32,color:#fff
-    style EFF fill:#2196F3,stroke:#1565C0,color:#fff
-    style COST fill:#FF9800,stroke:#E65100,color:#fff
-    style REV fill:#9C27B0,stroke:#6A1B9A,color:#fff
-```
+![image](https://github.com/user-attachments/assets/aa022480-5e22-4247-8763-327a4325dd7a)
 
----
 
 ## 🤖 Multi-Agent System
 
 ### 🎯 Agent Architecture Overview
 
-```mermaid
-graph TD
-    subgraph "Agent Ecosystem"
-        O[🎯 Orchestrator Agent<br/>Master Controller]
-        
-        subgraph "Operational Agents"
-            FO[✈️ Flight Operations<br/>• Real-time status<br/>• Weather data<br/>• Schedule info]
-            BM[📋 Booking Management<br/>• Reservations<br/>• Modifications<br/>• Seat selection]
-            BS[🧳 Baggage Services<br/>• Tracking<br/>• Claims<br/>• Policies]
-        end
-        
-        subgraph "Support Agents"
-            PB[📜 Policy & Billing<br/>• Fare rules<br/>• Refunds<br/>• Fees]
-            LP[⭐ Loyalty Program<br/>• Miles management<br/>• Status benefits<br/>• Redemptions]
-            ER[🚨 Emergency Response<br/>• Crisis management<br/>• Rebooking<br/>• Medical emergencies]
-            LC[🌍 Language & Cultural<br/>• Translation<br/>• Cultural guidance<br/>• Visa requirements]
-        end
-    end
-    
-    O --> FO
-    O --> BM
-    O --> BS
-    O --> PB
-    O --> LP
-    O --> ER
-    O --> LC
-    
-    FO -.-> BM
-    BM -.-> PB
-    BS -.-> LP
-    ER -.-> FO
-    LC -.-> PB
-    
-    style O fill:#FF6B6B,stroke:#E53E3E,color:#fff
-    style FO fill:#4ECDC4,stroke:#26A69A,color:#fff
-    style BM fill:#45B7D1,stroke:#1976D2,color:#fff
-    style BS fill:#96CEB4,stroke:#4CAF50,color:#fff
-    style PB fill:#FFEAA7,stroke:#FFC107,color:#000
-    style LP fill:#DDA0DD,stroke:#9C27B0,color:#fff
-    style ER fill:#FF7675,stroke:#D32F2F,color:#fff
-    style LC fill:#A29BFE,stroke:#3F51B5,color:#fff
-```
+![image](https://github.com/user-attachments/assets/3d1e596b-487f-4286-8d83-3451d9e8ab91)
 
 ### 📋 Agent Specifications
 
@@ -409,30 +243,6 @@ graph TB
 ## ✨ Key Features
 
 ### 🎯 Intelligent Conversation Management
-
-```mermaid
-flowchart TD
-    START([👤 Customer Query]) --> PARSE[🧠 Natural Language Processing]
-    PARSE --> INTENT[🎯 Intent Recognition]
-    INTENT --> CONTEXT[📋 Context Analysis]
-    CONTEXT --> ROUTE[🔀 Agent Routing]
-    
-    ROUTE --> SINGLE{Single Agent?}
-    SINGLE -->|Yes| PROCESS[⚡ Direct Processing]
-    SINGLE -->|No| MULTI[🔄 Multi-Agent Coordination]
-    
-    MULTI --> COORD[🤝 Agent Collaboration]
-    COORD --> SYNTH[🧬 Response Synthesis]
-    PROCESS --> SYNTH
-    
-    SYNTH --> RESPONSE[💬 Customer Response]
-    RESPONSE --> FEEDBACK[📊 Collect Feedback]
-    FEEDBACK --> LEARN[🎓 Continuous Learning]
-    
-    style START fill:#E3F2FD,stroke:#1976D2
-    style RESPONSE fill:#E8F5E8,stroke:#4CAF50
-    style LEARN fill:#FFF3E0,stroke:#FF9800
-```
 
 ### 🔄 Proactive Service Capabilities
 
@@ -589,40 +399,6 @@ gantt
 
 ---
 
-## 🎬 Demo Scenarios
-
-### 🎭 3-Minute Demo Script
-
-```mermaid
-timeline
-    title Live Demo Flow
-    
-    section Intro (30s)
-        Welcome & Overview    : Show landing page
-                              : Introduce multi-agent concept
-    
-    section Simple Query (45s)
-        Flight Status         : "What's the status of AA123?"
-                              : Instant response with live data
-                              : Show agent coordination
-    
-    section Complex Problem (90s)
-        Weather Cancellation  : "My connecting flight scenario..."
-                              : Multiple agents collaborating
-                              : Real-time rebooking with benefits
-                              : Automatic compensation
-    
-    section Crisis Demo (45s)
-        Mass Disruption       : Simulate airport closure
-                              : Proactive notifications
-                              : Coordinated response
-                              : Analytics dashboard
-    
-    section Closing (30s)
-        Results Summary       : Performance metrics
-                              : Business impact
-                              : Q&A invitation
-```
 
 ### 🎯 Interactive Demo Features
 
@@ -637,21 +413,6 @@ timeline
 ---
 
 ## 🏆 Competitive Advantages
-
-### 💪 Technical Excellence
-
-```mermaid
-radar
-    title Technical Superiority
-    "Scalability" : 95
-    "Performance" : 90
-    "Reliability" : 95
-    "Innovation" : 98
-    "Integration" : 92
-    "Security" : 94
-    "Maintainability" : 88
-    "Documentation" : 96
-```
 
 | 🔧 Technical Aspect | 🎯 Our Solution | 🏢 Traditional Systems | 📈 Improvement |
 |-------------------|----------------|----------------------|---------------|
